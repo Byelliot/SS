@@ -24,7 +24,7 @@ echo "Press any key to start...or Press Ctrl+C to cancel"
 char=`get_char` 
 
 systemctl stop firewalld.service
-cd shadowsocks
+cd /root/shadowsocks
 ./run.sh
 
 
