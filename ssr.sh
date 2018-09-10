@@ -23,7 +23,7 @@ echo "Press any key to start...or Press Ctrl+C to cancel"
 
 char=`get_char`
 
-
+cd /root
 yum -y groupinstall "Development Tools"
 wget https://github.com/jedisct1/libsodium/releases/download/1.0.16/libsodium-1.0.16.tar.gz
 tar xf libsodium-1.0.16.tar.gz && cd libsodium-1.0.16
@@ -38,5 +38,7 @@ cd shadowsocks
 pip install -r requirements.txt
 cp apiconfig.py userapiconfig.py
 cp config.json user-config.json
-
+cd /etc/systemd/system/
+wget https://raw.githubusercontent.com/Byelliot/SS/master/ssr.service
+systemctl enable ssr
 echo "已完成"
